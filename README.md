@@ -63,10 +63,10 @@ Below is a list of the required API's for the application.
 **Assumptions**: Amount to deposit will be the request body. Only authenticated client can deposit amount in its own balance (req.profile.id == req.params.userId). Total jobs to pay amount also includes unpaid jobs under terminated contracts. 
 
 1. **_GET_** `/admin/best-profession?start=<date>&end=<date>` - Returns the profession that earned the most money (sum of jobs paid) for any contactor that worked in the query time range.
-**Assumptions**: I have considered earn money as the money earned from jobs whose payments were done during the query time range.
+**Assumptions**: I have considered earn money as the money earned from jobs whose payments were done during the query time range. This API is an admin API, so I have omitted auth middleware for it.
 
 1. **_GET_** `/admin/best-clients?start=<date>&end=<date>&limit=<integer>` - returns the clients the paid the most for jobs in the query time period. limit query parameter should be applied, default limit is 2.
-**Assumptions**: I have considered paid money as the money paid to jobs whose payments were done during the query time range.
+**Assumptions**: I have considered paid money as the money paid to jobs whose payments were done during the query time range. This API is an admin API, so I have omitted auth middleware for it.
 
 ```
  [
